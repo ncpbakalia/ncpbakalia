@@ -1,0 +1,84 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F5F8F6;
+  --foreground: #17211B;
+  --primary: #075E3B;
+  --primary-hover: #064E31;
+  --secondary: #13804A;
+  --accent-red: #E32636;
+  --card-bg: #FFFFFF;
+  --border-color: #E2ECE6;
+}
+
+@theme inline {
+  --font-bengali: var(--font-bengali), var(--font-inter), sans-serif;
+  --font-sans: var(--font-inter), var(--font-bengali), sans-serif;
+  --color-primary: #075E3B;
+  --color-primary-hover: #064E31;
+  --color-secondary: #13804A;
+  --color-accent-red: #E32636;
+  --color-dark: #17211B;
+  --color-surface: #F5F8F6;
+  --color-border: #E2ECE6;
+}
+
+body {
+  font-family: var(--font-bengali), "Hind Siliguri", "Noto Sans Bengali", sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #F0F4F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #075E3B66;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #075E3B;
+}
+
+/* Professional Print Styles for A4 Official Documents */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 15mm 15mm;
+  }
+  
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+  
+  .no-print,
+  nav,
+  footer,
+  .admin-sidebar,
+  .print-hide {
+    display: none !important;
+  }
+  
+  .print-only {
+    display: block !important;
+  }
+
+  .print-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  .page-break {
+    page-break-after: always;
+  }
+}
